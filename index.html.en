@@ -23,12 +23,12 @@ $(document).ready(function(){
 					    				
 					          if (button == 'next') { // If clicked buttons value is all, we post every wine
 					          	  
-					          	  	document.getElementById("rew").style.backgroundImage = "url('" + data.revolver[mod(data.curr-2, 10)] + "')";
-					          	  	document.getElementById("prev").style.backgroundImage = "url('" + data.revolver[mod(data.curr-1,10)] + "')";
+					          	  	document.getElementById("rew").style.backgroundImage = "url('" + data.revolver[data.tick]+ "')";
+					          	  	document.getElementById("prev").style.backgroundImage = "url('" + data.revolver[data.prev] + "')";
 					          	  	document.getElementById("curr").style.backgroundImage = "url('" + data.revolver[data.curr] + "')";
 					          	  	document.getElementById("theater").style.backgroundImage = "url('" + data.revolver[data.curr] + "')";
-					          	  	document.getElementById("next").style.backgroundImage = "url('" + data.revolver[mod(data.curr+1,10)] + "')";
-					          	  	document.getElementById("ff").style.backgroundImage = "url('" + data.revolver[mod(data.curr+2,10)] + "')";
+					          	  	document.getElementById("next").style.backgroundImage = "url('" + data.revolver[data.next] + "')";
+					          	  	document.getElementById("ff").style.backgroundImage = "url('" + data.revolver[data.tock] + "')";
 					          	  	         	  
 							         //$('#theater').append('<div id="current_image"><img src = \'' + data.revolver[2] + '\' /></div>')
 							    //        	//$('#multiplex').append('<div id="rew"><img src = \'' + data.revolver[0] + '\' /></div>');
@@ -38,6 +38,7 @@ $(document).ready(function(){
 									 	// $('#multiplex').append('<div id="ff"><img src = \'' + data.revolver[4] + '\' /></div>');
 
 										   $('#wines').append('<div id="pos">Current: ' + data.curr + '</div>');
+										   $('#wines').append('<div id="pos">Vector: ' + data.repeller + " " + data.attractor + " " + data.tick + " " + data.prev + " " + data.curr + " " + data.next + " " + data.tock + '</div>');
 									        }
 						        else if (button == 'prev') { // If clicked buttons value is red, we post only red wines
 								        document.getElementById("rew").style.backgroundImage = "url('" + data.revolver[mod(data.curr-2,10)] + "')";
@@ -48,6 +49,7 @@ $(document).ready(function(){
 					          	  	document.getElementById("ff").style.backgroundImage = "url('" + data.revolver[mod(data.curr+2,10)] + "')";
 									      
 									      $('#wines').append('<div id="pos">Current: ' + data.curr + '</div>');
+									      $('#wines').append('<div id="pos">Vector: ' + data.gyre + '</div>');
 									  }
 							    //  else if (button == 'all') { // If clicked buttons value is white, we post only white wines
 								   //            for (var i in data) {
@@ -92,6 +94,7 @@ $(document).ready(function(){
 			<form method="post" action="">
 						<button value="prev" type="submit">Prev</button>
 										<button value="next" type="submit">Next</button>
+										<button value="reset" type="submit">Reset</button>
 											</form>
 											   
 												
