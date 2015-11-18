@@ -1,1 +1,2 @@
-An AJAX carousel designed with the headless browser experience in mind. All GET requests return clean, static JSON URLs into the model first before rendering. Search engines appreciate this.
+# ichabod
+An AJAX carousel friendly to headless browsers. Returns clean, static JSON-encoded URL responses, which are then loaded into the view. Search engines appreciate this.
